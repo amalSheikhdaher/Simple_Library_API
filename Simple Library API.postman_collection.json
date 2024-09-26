@@ -1,0 +1,1003 @@
+{
+	"info": {
+		"_postman_id": "20f46e56-0256-4303-bb49-fab22e7ed1cf",
+		"name": "Simple Library API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34376611"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Show All Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/categories"
+					},
+					"response": [
+						{
+							"name": "Show All Category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "http://127.0.0.1:8000/api/categories"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Sep 2024 16:43:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"novels\",\n            \"description\": null,\n            \"created_at\": \"2024-09-25 16:41:43\",\n            \"updated_at\": \"2024-09-25 16:41:43\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"sciences\",\n            \"description\": null,\n            \"created_at\": \"2024-09-25 16:41:44\",\n            \"updated_at\": \"2024-09-25 16:41:44\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"technology\",\n            \"description\": null,\n            \"created_at\": \"2024-09-25 16:41:44\",\n            \"updated_at\": \"2024-09-25 16:41:44\"\n        }\n    ],\n    \"message\": \"Categories with their categories retrieved successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add New Categories",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "history",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Historical books",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/categories"
+					},
+					"response": [
+						{
+							"name": "Add New Category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "history",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Historical books",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/categories"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Sep 2024 16:47:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"History\",\n        \"description\": \"Historical books\",\n        \"created_at\": \"2024-09-25 16:47:32\",\n        \"updated_at\": \"2024-09-25 16:47:32\"\n    },\n    \"message\": \"Category Store Successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Show Single Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/categories/4"
+					},
+					"response": [
+						{
+							"name": "Show Single Category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "http://127.0.0.1:8000/api/categories/4"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Sep 2024 16:49:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"History\",\n        \"description\": \"Historical books\",\n        \"created_at\": \"2024-09-25 16:47:32\",\n        \"updated_at\": \"2024-09-25 16:47:32\"\n    },\n    \"message\": \"Category with its categories retrieved successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit Category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "history",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Description historical books",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/categories/4"
+					},
+					"response": [
+						{
+							"name": "Edit Category",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "history",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Description historical books",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/categories/4"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Sep 2024 17:17:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"History\",\n        \"description\": \"Description historical books\",\n        \"created_at\": \"2024-09-25 16:47:32\",\n        \"updated_at\": \"2024-09-25 17:14:55\"\n    },\n    \"message\": \"Category Update Successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/categories/4"
+					},
+					"response": [
+						{
+							"name": "Delete Category",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "http://127.0.0.1:8000/api/categories/4"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Sep 2024 17:19:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": true,\n    \"message\": \"Category Delete Successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Show All Books",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/books"
+					},
+					"response": [
+						{
+							"name": "Show All Book",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "http://127.0.0.1:8000/api/books"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Sep 2024 17:35:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"LARAVEL: THE AMAZING QUIZ BOOK\",\n            \"author\": \"NARAYAN CHANGDER\",\n            \"published_at\": \"2024-05-16T00:00:00.000000Z\",\n            \"is_active\": 0,\n            \"category\": {\n                \"id\": 3,\n                \"name\": \"technology\"\n            },\n            \"created_at\": \"2024-09-25 17:30:19\",\n            \"updated_at\": \"2024-09-25 17:30:19\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"LARAVEL: THE AMAZING BOOK\",\n            \"author\": \"NARAYAN CHANGDER\",\n            \"published_at\": \"2024-05-20T00:00:00.000000Z\",\n            \"is_active\": 1,\n            \"category\": {\n                \"id\": 2,\n                \"name\": \"sciences\"\n            },\n            \"created_at\": \"2024-09-25 17:35:38\",\n            \"updated_at\": \"2024-09-25 17:35:38\"\n        }\n    ],\n    \"message\": \"Books retrieved successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add New Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "LARAVEL: THE AMAZING QUIZ BOOK",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "NARAYAN CHANGDER",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2024-5-16",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/books"
+					},
+					"response": [
+						{
+							"name": "Add New Book",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "LARAVEL: THE AMAZING QUIZ BOOK",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "NARAYAN CHANGDER",
+											"type": "text"
+										},
+										{
+											"key": "published_at",
+											"value": "2024-5-16",
+											"type": "text"
+										},
+										{
+											"key": "is_active",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/books"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Sep 2024 17:30:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"LARAVEL: THE AMAZING QUIZ BOOK\",\n        \"author\": \"NARAYAN CHANGDER\",\n        \"published_at\": \"2024-05-16T00:00:00.000000Z\",\n        \"is_active\": false,\n        \"category\": {\n            \"id\": 3,\n            \"name\": \"technology\"\n        },\n        \"created_at\": \"2024-09-25 17:30:19\",\n        \"updated_at\": \"2024-09-25 17:30:19\"\n    },\n    \"message\": \"Book Store Successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Show Single Book",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/books/1"
+					},
+					"response": [
+						{
+							"name": "Show Single Book",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "http://127.0.0.1:8000/api/books/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Sep 2024 17:33:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"LARAVEL: THE AMAZING QUIZ BOOK\",\n        \"author\": \"NARAYAN CHANGDER\",\n        \"published_at\": \"2024-05-16T00:00:00.000000Z\",\n        \"is_active\": 0,\n        \"category\": {\n            \"id\": 3,\n            \"name\": \"technology\"\n        },\n        \"created_at\": \"2024-09-25 17:30:19\",\n        \"updated_at\": \"2024-09-25 17:30:19\"\n    },\n    \"message\": \"Single Book data Show\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit Book Data",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "LARAVEL: THE AMAZING BOOK",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "NARAYAN CHANGDER",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2024-5-16",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/books/2"
+					},
+					"response": [
+						{
+							"name": "Edit Book Data",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "LARAVEL: THE AMAZING BOOK",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "NARAYAN CHANGDER",
+											"type": "text"
+										},
+										{
+											"key": "published_at",
+											"value": "2024-5-16",
+											"type": "text"
+										},
+										{
+											"key": "is_active",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:8000/api/books/2"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Sep 2024 17:37:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"title\": \"LARAVEL: THE AMAZING BOOK\",\n        \"author\": \"NARAYAN CHANGDER\",\n        \"published_at\": \"2024-05-16T00:00:00.000000Z\",\n        \"is_active\": false,\n        \"category\": {\n            \"id\": 2,\n            \"name\": \"sciences\"\n        },\n        \"created_at\": \"2024-09-25 17:35:38\",\n        \"updated_at\": \"2024-09-25 17:37:55\"\n    },\n    \"message\": \"Book Update Successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Index By Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/categories/2/books"
+					},
+					"response": [
+						{
+							"name": "Index By Category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "http://127.0.0.1:8000/api/categories/2/books"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Sep 2024 17:50:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"title\": \"LARAVEL: THE AMAZING BOOK\",\n            \"author\": \"NARAYAN CHANGDER\",\n            \"published_at\": \"2024-05-16T00:00:00.000000Z\",\n            \"is_active\": 0,\n            \"category\": {\n                \"id\": 2,\n                \"name\": \"sciences\"\n            },\n            \"created_at\": \"2024-09-25 17:35:38\",\n            \"updated_at\": \"2024-09-25 17:37:55\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"LARAVEL:\",\n            \"author\": \"NARAYAN CHANGDER\",\n            \"published_at\": \"2024-05-20T00:00:00.000000Z\",\n            \"is_active\": 1,\n            \"category\": {\n                \"id\": 2,\n                \"name\": \"sciences\"\n            },\n            \"created_at\": \"2024-09-25 17:46:32\",\n            \"updated_at\": \"2024-09-25 17:46:32\"\n        }\n    ],\n    \"message\": \"Books retrieved successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/books/3"
+					},
+					"response": [
+						{
+							"name": "Delete Book",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "http://127.0.0.1:8000/api/books/3"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.2"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Sep 2024 20:31:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": true,\n    \"message\": \"Book Delete Successfully\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
