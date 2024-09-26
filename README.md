@@ -12,10 +12,8 @@ This is a Laravel-based API for managing books and categories. The API allows yo
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Running the Application](#running-the-application)
-- [API Endpoints](#api-endpoints)
 - [Usage](#usage)
 - [Testing](#testing)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
@@ -29,7 +27,7 @@ This is a Laravel-based API for managing books and categories. The API allows yo
 ### Steps
 1. **Clone the repository**:
    ```
-   git clone https://github.com/your-username/book-category-api.git
+   git clone https://github.com/amalSheikhdaher/Simple_Library_API.git
    cd book-category-api
    ```
 
@@ -100,7 +98,7 @@ GET /api/books
 2. **Retrieve all categories with their associated books**:
 
 ```bash
-GET /api/books/category
+GET /api/categories/books
 ```
 
 3. **Create a new book**:
